@@ -13,6 +13,7 @@ const useGlobalContext = () =>{
 const AppContextProvider = ({children}) =>{
     const [isLoading, setIsLoading] = useState(true)
     const [cocktailsData, setCocktailsData] = useState({})
+    const [searchTerm, setSearchTerm] = useState("")
     const getCocktails = async () => {
         let response = await fetch(url);
         let data = await response.json()
@@ -23,7 +24,9 @@ const AppContextProvider = ({children}) =>{
     return (
         <AppContext.Provider value={{
             isLoading,
-            cocktailsData
+            cocktailsData,
+            searchTerm,
+            setSearchTerm
         }}>
             {children}
         </AppContext.Provider>

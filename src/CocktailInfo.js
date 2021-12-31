@@ -3,18 +3,43 @@ import { useGlobalContext } from "./context"
 const CocktailInfo = () =>{
   const { cocktailsData } = useGlobalContext()
   const { slug } = useParams()
-  //TODO add ingredients
-const {strDrink,idDrink,strDrinkThumb,strGlass,strInstructions} = cocktailsData.find(item=>item.idDrink === slug)
+const {
+  strDrink,
+  idDrink,
+  strDrinkThumb,
+  strGlass,
+  strInstructions,
+  strIngredient1,
+  strIngredient2,
+  strIngredient3,
+  strIngredient4,
+  strIngredient5,
+} = cocktailsData.find((item) => item.idDrink === slug)
   return (
-      <div className="cocktail-detail">
+    <div className="cocktail-detail">
+      <div className="image-container">
+        <img src={strDrinkThumb} alt={strDrink} />
+      </div>
+      <div className="text-container">
         <h1>
           {strDrink}-{idDrink}
         </h1>
-        <img src={strDrinkThumb} alt={strDrink} />
         <h3>{strGlass}</h3>
         <p>{strInstructions}</p>
-        <h2>Hi there </h2>
+        <h2>Ingredients: </h2>
+        <p>
+          {strIngredient1 +
+            "," +
+            strIngredient2 +
+            "," +
+            strIngredient3||"" +
+            "," +
+            strIngredient4||"" +
+            "," +
+            strIngredient5||""}
+        </p>
       </div>
+    </div>
   )
 }
 

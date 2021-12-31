@@ -1,38 +1,114 @@
-html{box-sizing:border-box;}
-*,*::before,*::after{box-sizing:inherit;}
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: monospace;
 }
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
 }
-img{
+img {
   width: 100%;
   object-fit: cover;
 }
+/* Nav */
+.nav-container {
+  background: rgb(175, 125, 223);
+  padding: 1em 0;
+}
+.nav-inner-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a {
+  text-decoration: unset;
+  color: rgb(155, 255, 245);
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0 1em;
+}
 /* home */
-.drinks-container{
-  width: 100%;
+.search-bar {
+  border-radius: 5px;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+  padding: 0.5em 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.search-bar * {
+  line-height: 1em;
+  margin: 0 0.25em;
+  height: 1.6rem;
+  border-radius: 5px;
+}
+.search-bar input {
+  border: 2px solid rgb(219, 214, 214);
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.drinks-container {
   display: flex;
   flex-flow: row wrap;
-  margin: 0 auto;
+  justify-content: center;
+  gap: 1.3em;
 }
 /* cocktail component */
-.cocktail{
-  outline:2px solid red;
+.cocktail {
   width: 25%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 2em;
-  min-width:200px;
-   margin: 0 auto;
+  min-width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  gap: 0.5em;
 }
-.image-container{
-  outline:2px solid red;
+.cocktail a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.image-container {
+  border-radius: 10px;
+  margin: 0;
+  object-fit: cover;
+}
+
+/* cocktail more info component */
+.cocktail-detail {
+  display: flex;
+  width: 80%;
+  margin: 5em auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+@media (max-width: 700px) {
+  .cocktail-detail {
+    flex-direction: column;
+  }
+}
+.text-container {
+  text-align: center;
+  margin-left: 2em;
+  padding: 2em;
 }
