@@ -22,6 +22,7 @@ h4 {
 img {
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 /* Nav */
 .nav-container {
@@ -37,10 +38,12 @@ img {
 }
 .nav a {
   text-decoration: unset;
-  color: rgb(155, 255, 245);
+  color: rgb(255, 255, 255);
   font-size: 1.4rem;
   font-weight: bold;
   margin: 0 1em;
+  text-decoration: underline;
+  text-underline-offset: .2em;
 }
 /* home */
 .search-bar {
@@ -89,26 +92,66 @@ img {
   text-decoration: none;
   font-size: 1.3rem;
 }
-.image-container {
-  border-radius: 10px;
-  margin: 0;
-  object-fit: cover;
-}
 
 /* cocktail more info component */
 .cocktail-detail {
+  border-radius: 10px;
   display: flex;
   width: 80%;
-  margin: 5em auto;
+  margin: 2em auto 0;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-height: 80vh;
 }
 @media (max-width: 700px) {
   .cocktail-detail {
     flex-direction: column;
   }
 }
+.cocktail-detail .image-container {
+  border-radius: 10px;
+  margin: 0;
+  object-fit: cover;
+  overflow: hidden;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
 .text-container {
   text-align: center;
-  margin-left: 2em;
   padding: 2em;
+}
+
+.back-button {
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: #e63946ff;
+    color: #fff;
+    padding: 23px 50px;
+    margin: auto;
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: 0px;
+    width: max-content;
+    cursor: pointer;
+    transition: all 0.3s 0s ease-in-out;
+}
+.back-button {
+    letter-spacing: 2px;
+    background-color: rgb(195, 150, 231);
+    color: #fff;
+    padding: 1em 2em;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    border:none;
+    width: max-content;
+    cursor: pointer;
+    transition: all 0.3s 0s ease-in-out;
+}
+
+.back-button:hover {
+    transform: scale(1.04, 1);
+    background-color: rgb(232, 186, 238);
+    text-decoration: none;
 }
